@@ -44,6 +44,8 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Why do tables need a `primary key`?
 
+ - The `primary key` is the unique identifier a database uses to build relationships. If the cars table in our database doesn't have a primary key, then we can't relate that car to a dealership. Without a primary key, the entities in our cars table cannot be used anywhere else in our data model.
+
 - [ ] What is the name given to a table column that references the primary key on another table.
 
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
