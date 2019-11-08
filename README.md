@@ -40,6 +40,8 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
 
+ - `Relational Databases` are a type of database built upon entity relationships. Entity relationships are considered to be 1:1, 1:many, or many:many. `SQL` is shorthand for `Structured Query Language` and it is the language used to access a `Relational Database`. We use `SQL` queries to read, insert, delete, and update data in a `Relational Database`.
+
 - [ ] Why do tables need a `primary key`?
 
 - [ ] What is the name given to a table column that references the primary key on another table.
