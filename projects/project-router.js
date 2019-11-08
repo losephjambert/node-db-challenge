@@ -58,4 +58,23 @@ router.post('/', (req, res) => {
     });
 });
 
+router.post('/:id/tasks', (req, res) => {
+  const taskData = req.body;
+  const { id } = req.params;
+
+  Projects.findById(id)
+    .then(project => {
+      if (project) {
+        Projects.addTask(taskData, id).then(task => {
+          res.status(201).json(task);
+        });
+      } else {
+        res.status(404).json({ message: 'Could not find project with given id.' });
+      }
+    })
+    .catch(err => {
+      res.status(500).json({ message: 'Failed to create new task' });
+    });
+});
+
 module.exports = router;

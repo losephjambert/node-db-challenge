@@ -46,9 +46,24 @@ const addProject = async projectData => {
   }
 };
 
+const addTask = async (taskData, projectId) => {
+  const task = {
+    ...taskData,
+    project_id: projectId,
+  };
+
+  try {
+    const insertTask = await db('tasks').insert(task);
+    return insertTask;
+  } catch (error) {
+    return error;
+  }
+};
+
 module.exports = {
   find,
   findById,
   findTasks,
   addProject,
+  addTask,
 };
