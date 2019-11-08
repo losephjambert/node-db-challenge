@@ -1,7 +1,13 @@
 const db = require('../data/dbConfig.js');
 
-const find = () => {
-  return db('projects');
+const find = async () => {
+  const projects = await db('projects');
+  return projects.map(project => {
+    return {
+      ...project,
+      completed: project.completed ? true : false,
+    };
+  });
 };
 
 const findById = async id => {
@@ -10,7 +16,12 @@ const findById = async id => {
       .where('id', '=', id)
       .first();
     if (!project) return null;
-    else return project;
+    else {
+      return {
+        ...project,
+        completed: project.completed ? true : false,
+      };
+    }
   } catch (error) {
     return error;
   }
@@ -23,12 +34,17 @@ const findTasks = async id => {
       .where('projects.id', '=', id)
       .select(
         'tasks.id',
+        'tasks.completed',
         'tasks.description as task_description',
         'projects.name as project_name',
         'projects.description as project_description'
       );
-    console.log(tasks);
-    return tasks;
+    return tasks.map(task => {
+      return {
+        ...task,
+        completed: task.completed ? true : false,
+      };
+    });
   } catch (error) {
     return error;
   }
@@ -40,7 +56,10 @@ const addProject = async projectData => {
     const createdProject = await db('projects')
       .where('id', '=', newProject[0])
       .first();
-    return createdProject;
+    return {
+      ...createdProject,
+      completed: createdProject.completed ? true : false,
+    };
   } catch (error) {
     return error;
   }
