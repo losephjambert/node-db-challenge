@@ -33,7 +33,7 @@ exports.up = function(knex) {
           .string('name', 255)
           .notNullable()
           .unique();
-        table.text('descrption', 500).notNullable();
+        table.text('description', 500).notNullable();
       })
 
       // project_resources table
