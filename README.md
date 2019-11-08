@@ -48,6 +48,8 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] What is the name given to a table column that references the primary key on another table.
 
+- That would be the `Foreign Key`
+
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
 
 ## Minimum Viable Product
