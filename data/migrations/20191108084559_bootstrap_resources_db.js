@@ -49,7 +49,7 @@ exports.up = function(knex) {
           .onDelete('RESTRICT')
           .onUpdate('CASCADE');
 
-        // foregin key to resource id
+        // foreign key to resource id
         table
           .integer('resource_id')
           .unsigned()
