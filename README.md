@@ -40,11 +40,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
 
+ - `Relational Databases` are a type of database built upon entity relationships. Entity relationships are considered to be 1:1, 1:many, or many:many. `SQL` is shorthand for `Structured Query Language` and it is the language used to access a `Relational Database`. We use `SQL` queries to read, insert, delete, and update data in a `Relational Database`.
+
 - [ ] Why do tables need a `primary key`?
+
+ - The `primary key` is the unique identifier a database uses to build relationships. If the cars table in our database doesn't have a primary key, then we can't relate that car to a dealership. Without a primary key, the entities in our cars table cannot be used anywhere else in our data model.
 
 - [ ] What is the name given to a table column that references the primary key on another table.
 
+- That would be the `Foreign Key`
+
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+
+- We need a joining table that connects our two entities that have a many to many relationship.
 
 ## Minimum Viable Product
 
